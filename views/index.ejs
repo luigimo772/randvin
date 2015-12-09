@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>randvin</title>
   </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  <body ng-app='randVin'>
+    <div ng-controller='VinController'>
+      {{vin}}
+    </div>
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.js"></script>
+  <script src='javascripts/randvin-module.js'></script>
+  <script src='javascripts/services/vin-service.js'></script>
+  <script src='javascripts/controllers/vin-controller.js'></script>
   </body>
 </html>
