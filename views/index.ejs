@@ -12,12 +12,12 @@
   </head>
   <body ng-app='randVin'>
     <div ng-controller='VinController'>
-      <div class='text-center'>
+      <div ng-show=vin class='text-center'>
         <br/>
         <button type="button" class="btn btn-primary" ng-click="getNewRandomVin()">Random VIN</button>
         <br/>
         <br/>
-        <h1 ng-cloak>{{vin}}</h1>
+        <h1>{{vin}}</h1>
       </div>
     </div>
   </body>
