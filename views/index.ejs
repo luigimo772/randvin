@@ -2,15 +2,23 @@
 <html>
   <head>
     <title>randvin</title>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src='javascripts/randvin-module.js'></script>
+    <script src='javascripts/services/vin-service.js'></script>
+    <script src='javascripts/controllers/vin-controller.js'></script>
   </head>
   <body ng-app='randVin'>
     <div ng-controller='VinController'>
-      {{vin}}
+      <div class='text-center'>
+        <br/>
+        <button type="button" class="btn btn-primary" ng-click="getNewRandomVin()">Random VIN</button>
+        <br/>
+        <br/>
+        <h1 ng-cloak>{{vin}}</h1>
+      </div>
     </div>
-  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js'></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.js"></script>
-  <script src='javascripts/randvin-module.js'></script>
-  <script src='javascripts/services/vin-service.js'></script>
-  <script src='javascripts/controllers/vin-controller.js'></script>
   </body>
 </html>

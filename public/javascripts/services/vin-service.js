@@ -4,7 +4,7 @@
 angular.module('randVin')
     .service('VinService', ['$resource',
         function ($resource) {
-            return $resource('http://randomvin.com/getvin.php?type=real', {}, {
+            return $resource('/vin', {}, {
                 getVin: {
                     method: 'GET'
                 }

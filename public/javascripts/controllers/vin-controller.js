@@ -4,5 +4,11 @@
 angular.module('randVin')
     .controller('VinController', ['$scope', 'VinService',
         function ($scope, vinService) {
-            $scope.vin = vinService.getVin();
+            $scope.getNewRandomVin = function () {
+                vinService.getVin(function (data) {
+                    $scope.vin = data.vin;
+                });
+            };
+
+            $scope.getNewRandomVin();
         }]);
