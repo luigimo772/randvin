@@ -11,4 +11,5 @@ angular.module('randVin')
             };
 
             $scope.getNewRandomVin();
+   			new ClipboardJS(".btn");
         }]);

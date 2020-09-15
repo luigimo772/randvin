@@ -11,7 +11,7 @@ router.get('/', function(req, res) {
 router.get('/vin', function(req, res) {
     request('http://randomvin.com/getvin.php?type=real', function(error, response, body) {
         if (!error && response.statusCode == 200) {
-            res.json({ vin: body });
+            res.json({vin: body});
         }
     });
 });

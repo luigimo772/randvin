@@ -2,12 +2,11 @@
 <html>
   <head>
     <title>randvin</title>
-
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.js"></script>
     <script src="https://cdn.rawgit.com/zenorocha/clipboard.js/master/dist/clipboard.min.js"></script>
     <script src="javascripts/libs/ngclipboard.min.js"></script>
-    <link rel="stylesheet"
+    <link rel="stylesheet" 
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
           crossorigin="anonymous">
@@ -16,19 +15,16 @@
     <script src='javascripts/controllers/vin-controller.js'></script>
   </head>
   <body ng-app='randVin'>
-    <div ng-controller='VinController'>
+    <div class="container-fluid" ng-controller='VinController'>
       <div ng-show=vin class='jumbotron text-center' style="background:lightgray !important">
-        <br/>
         <h1 id="vin">{{vin}}</h1>
-        <br/>
-        <br/>
-        <button type="button" class="btn btn-primary btn-lg" ng-click="getNewRandomVin()">Random VIN</button>
-        <button type="button" class="btn btn-default btn-lg"
-                ngclipboard
-                data-clipboard-text="{{vin}}">
-          Copy
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary btn-lg" ng-click="getNewRandomVin()">Random VIN</button>
+        <button class="btn btn-default btn-lg" data-clipboard-target="#vin">
           <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
         </button>
+      </div>  
       </div>
     </div>
   </body>
