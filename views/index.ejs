@@ -2,13 +2,12 @@
 <html>
   <head>
     <title>randvin</title>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js'></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular-resource.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
-    <script src="javascripts/libs/ngclipboard.min.js"></script>
-    <link rel="stylesheet" 
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
           crossorigin="anonymous">
     <script src='javascripts/randvin-module.js'></script>
     <script src='javascripts/services/vin-service.js'></script>
@@ -19,16 +18,17 @@
       <div ng-show=vin class='jumbotron jumbotron-fluid text-center' style="background:lightgray !important">
         <h1 id="vin">{{vin}}</h1>
       </div>
+      <div class="alert alert-danger text-center" ng-show="error">{{error}}</div>
       <div class="btn-group btn-group-justified">
         <div class="btn-group">
-          <button class="btn btn-primary btn-lg" ng-click="getNewRandomVin()">Random VIN</button>
+          <button class="btn btn-primary btn-lg" ng-click="getNewRandomVin()" ng-disabled="loading">{{loading ? 'Loading...' : 'Random VIN'}}</button>
         </div>
         <div class="btn-group">
-          <button class="btn btn-default btn-lg" data-clipboard-target="#vin">    
+          <button class="btn btn-default btn-lg" data-clipboard-target="#vin">
             <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
-          </button>  
-        </div>  
-      </div>  
+          </button>
+        </div>
+      </div>
     </div>
   </body>
 </html>
